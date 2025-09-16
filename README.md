@@ -1,815 +1,690 @@
-# CVPR 2024 论文和开源项目合集(Papers with Code)
+# CVPR 2024 论文与开源项目合集（Papers with Code）
 
-CVPR 2024 decisions are now available on OpenReview！
-
-
-> 注1：欢迎各位大佬提交issue，分享CVPR 2024论文和开源项目！
+> 注1：欢迎各位大佬提交issue，分享CVPR 2024的论文和开源项目！
 >
-> - [CVPR 2023](CVPR2022-Papers-with-Code.md)
+> - [CVPR 2023 合集](CVPR2022-Papers-with-Code.md)
 
 # 【CVPR 2024 论文开源目录】
 
-- [CVPR 2024 论文和开源项目合集(Papers with Code)](#cvpr-2024-论文和开源项目合集papers-with-code)
+- [CVPR 2024 论文与开源项目合集（Papers with Code）](#cvpr-2024-论文与开源项目合集papers-with-code)
 - [【CVPR 2024 论文开源目录】](#cvpr-2024-论文开源目录)
-- [3DGS(Gaussian Splatting)](#3dgsgaussian-splatting)
-- [Avatars](#avatars)
-- [Backbone](#backbone)
-- [CLIP](#clip)
-- [MAE](#mae)
-- [Embodied AI](#embodied-ai)
-- [GAN](#gan)
-- [OCR](#ocr)
-- [NeRF](#nerf)
-- [DETR](#detr)
-- [Prompt](#prompt)
-- [多模态大语言模型(MLLM)](#多模态大语言模型mllm)
-- [大语言模型(LLM)](#大语言模型llm)
-- [NAS](#nas)
-- [ReID(重识别)](#reid重识别)
-- [扩散模型(Diffusion Models)](#扩散模型diffusion-models)
-- [Vision Transformer](#vision-transformer)
-- [视觉和语言(Vision-Language)](#视觉和语言vision-language)
-- [目标检测(Object Detection)](#目标检测object-detection)
-- [异常检测(Anomaly Detection)](#异常检测anomaly-detection)
-- [目标跟踪(Object Tracking)](#目标跟踪object-tracking)
-- [语义分割(Semantic Segmentation)](#语义分割semantic-segmentation)
-- [医学图像(Medical Image)](#医学图像medical-image)
-- [医学图像分割(Medical Image Segmentation)](#医学图像分割medical-image-segmentation)
-- [自动驾驶(Autonomous Driving)](#自动驾驶autonomous-driving)
-- [3D点云(3D-Point-Cloud)](#3d点云3d-point-cloud)
-- [3D目标检测(3D Object Detection)](#3d目标检测3d-object-detection)
-- [3D语义分割(3D Semantic Segmentation)](#3d语义分割3d-semantic-segmentation)
-- [图像编辑(Image Editing)](#图像编辑image-editing)
-- [视频编辑(Video Editing)](#视频编辑video-editing)
-- [Low-level Vision](#low-level-vision)
-- [超分辨率(Super-Resolution)](#超分辨率super-resolution)
-- [去噪(Denoising)](#去噪denoising)
-  - [图像去噪(Image Denoising)](#图像去噪image-denoising)
-- [3D人体姿态估计(3D Human Pose Estimation)](#3d人体姿态估计3d-human-pose-estimation)
-- [图像生成(Image Generation)](#图像生成image-generation)
-- [视频生成(Video Generation)](#视频生成video-generation)
+- [3DGS（高斯溅射，Gaussian Splatting）](#3dgs高斯溅射gaussian-splatting)
+- [数字人化身（Avatars）](#数字人化身avatars)
+- [骨干网络（Backbone）](#骨干网络backbone)
+- [CLIP（跨模态匹配模型）](#clip跨模态匹配模型)
+- [MAE（掩码自编码器）](#mae掩码自编码器)
+- [具身智能（Embodied AI）](#具身智能embodied-ai)
+- [GAN（生成对抗网络）](#gan生成对抗网络)
+- [OCR（光学字符识别）](#ocr光学字符识别)
+- [NeRF（神经辐射场）](#nerf神经辐射场)
+- [DETR（检测Transformer）](#detr检测transformer)
+- [提示学习（Prompt）](#提示学习prompt)
+- [多模态大语言模型（MLLM）](#多模态大语言模型mllm)
+- [大语言模型（LLM）](#大语言模型llm)
+- [NAS（神经架构搜索）](#nas神经架构搜索)
+- [ReID（重识别）](#reid重识别)
+- [扩散模型（Diffusion Models）](#扩散模型diffusion-models)
+- [视觉Transformer（Vision Transformer）](#视觉transformervision-transformer)
+- [视觉与语言（Vision-Language）](#视觉与语言vision-language)
+- [目标检测（Object Detection）](#目标检测object-detection)
+- [异常检测（Anomaly Detection）](#异常检测anomaly-detection)
+- [目标跟踪（Object Tracking）](#目标跟踪object-tracking)
+- [语义分割（Semantic Segmentation）](#语义分割semantic-segmentation)
+- [医学图像（Medical Image）](#医学图像medical-image)
+- [医学图像分割（Medical Image Segmentation）](#医学图像分割medical-image-segmentation)
+- [自动驾驶（Autonomous Driving）](#自动驾驶autonomous-driving)
+- [3D点云（3D-Point-Cloud）](#3d点云3d-point-cloud)
+- [3D目标检测（3D Object Detection）](#3d目标检测3d-object-detection)
+- [3D语义分割（3D Semantic Segmentation）](#3d语义分割3d-semantic-segmentation)
+- [图像编辑（Image Editing）](#图像编辑image-editing)
+- [视频编辑（Video Editing）](#视频编辑video-editing)
+- [低级视觉（Low-level Vision）](#低级视觉low-level-vision)
+- [超分辨率（Super-Resolution）](#超分辨率super-resolution)
+- [去噪（Denoising）](#去噪denoising)
+  - [图像去噪（Image Denoising）](#图像去噪image-denoising)
+- [3D人体姿态估计（3D Human Pose Estimation）](#3d人体姿态估计3d-human-pose-estimation)
+- [图像生成（Image Generation）](#图像生成image-generation)
+- [视频生成（Video Generation）](#视频生成video-generation)
 - [3D生成](#3d生成)
-- [视频理解(Video Understanding)](#视频理解video-understanding)
-- [知识蒸馏(Knowledge Distillation)](#知识蒸馏knowledge-distillation)
-- [立体匹配(Stereo Matching)](#立体匹配stereo-matching)
-- [场景图生成(Scene Graph Generation)](#场景图生成scene-graph-generation)
-- [视频质量评价(Video Quality Assessment)](#视频质量评价video-quality-assessment)
-- [数据集(Datasets)](#数据集datasets)
-- [其他(Others)](#其他others)
+- [视频理解（Video Understanding）](#视频理解video-understanding)
+- [知识蒸馏（Knowledge Distillation）](#知识蒸馏knowledge-distillation)
+- [立体匹配（Stereo Matching）](#立体匹配stereo-matching)
+- [场景图生成（Scene Graph Generation）](#场景图生成scene-graph-generation)
+- [视频质量评价（Video Quality Assessment）](#视频质量评价video-quality-assessment)
+- [数据集（Datasets）](#数据集datasets)
+- [其他（Others）](#其他others)
 
 <a name="3DGS"></a>
 
-# 3DGS(Gaussian Splatting)
+# 3DGS（高斯溅射，Gaussian Splatting）
 
-**Scaffold-GS: Structured 3D Gaussians for View-Adaptive Rendering**
+**《Scaffold-GS：面向视图自适应渲染的结构化3D高斯模型》**
+- 项目主页：https://city-super.github.io/scaffold-gs/
+- 论文链接：https://arxiv.org/abs/2312.00109
+- 代码仓库：https://github.com/city-super/Scaffold-GS
 
-- Homepage: https://city-super.github.io/scaffold-gs/
-- Paper: https://arxiv.org/abs/2312.00109
-- Code: https://github.com/city-super/Scaffold-GS
+**《GPS-Gaussian：面向实时人体新视图合成的可泛化像素级3D高斯溅射》**
+- 项目主页：https://shunyuanzheng.github.io/GPS-Gaussian 
+- 论文链接：https://arxiv.org/abs/2312.02155
+- 代码仓库：https://github.com/ShunyuanZheng/GPS-Gaussian
 
-**GPS-Gaussian: Generalizable Pixel-wise 3D Gaussian Splatting for Real-time Human Novel View Synthesis**
+**《GaussianAvatar：基于可驱动3D高斯的单视频真实感人体化身建模》**
+- 论文链接：https://arxiv.org/abs/2312.02134
+- 代码仓库：https://github.com/huliangxiao/GaussianAvatar
 
-- Homepage: https://shunyuanzheng.github.io/GPS-Gaussian 
-- Paper: https://arxiv.org/abs/2312.02155
-- Code: https://github.com/ShunyuanZheng/GPS-Gaussian
+**《GaussianEditor：基于高斯溅射的快速可控3D编辑》**
+- 论文链接：https://arxiv.org/abs/2311.14521
+- 代码仓库：https://github.com/buaacyw/GaussianEditor 
 
-**GaussianAvatar: Towards Realistic Human Avatar Modeling from a Single Video via Animatable 3D Gaussians**
+**《可变形3D高斯：面向高保真单目动态场景重建》**
+- 项目主页：https://ingra14m.github.io/Deformable-Gaussians/ 
+- 论文链接：https://arxiv.org/abs/2309.13101
+- 代码仓库：https://github.com/ingra14m/Deformable-3D-Gaussians
 
-- Paper: https://arxiv.org/abs/2312.02134
-- Code: https://github.com/huliangxiao/GaussianAvatar
+**《SC-GS：面向可编辑动态场景的稀疏控制高斯溅射》**
+- 项目主页：https://yihua7.github.io/SC-GS-web/ 
+- 论文链接：https://arxiv.org/abs/2312.14937
+- 代码仓库：https://github.com/yihua7/SC-GS
 
-**GaussianEditor: Swift and Controllable 3D Editing with Gaussian Splatting**
+**《时空高斯特征溅射：面向实时动态视图合成》**
+- 项目主页：https://oppo-us-research.github.io/SpacetimeGaussians-website/ 
+- 论文链接：https://arxiv.org/abs/2312.16812
+- 代码仓库：https://github.com/oppo-us-research/SpacetimeGaussians
 
-- Paper: https://arxiv.org/abs/2311.14521
-- Code: https://github.com/buaacyw/GaussianEditor 
+**《DNGaussian：基于全局-局部深度归一化的稀疏视图3D高斯辐射场优化》**
+- 项目主页：https://fictionarry.github.io/DNGaussian/
+- 论文链接：https://arxiv.org/abs/2403.06912
+- 代码仓库：https://github.com/Fictionarry/DNGaussian
 
-**Deformable 3D Gaussians for High-Fidelity Monocular Dynamic Scene Reconstruction**
+**《4D高斯溅射：面向实时动态场景渲染》**
+- 论文链接：https://arxiv.org/abs/2310.08528
+- 代码仓库：https://github.com/hustvl/4DGaussians
 
-- Homepage: https://ingra14m.github.io/Deformable-Gaussians/ 
-- Paper: https://arxiv.org/abs/2309.13101
-- Code: https://github.com/ingra14m/Deformable-3D-Gaussians
-
-**SC-GS: Sparse-Controlled Gaussian Splatting for Editable Dynamic Scenes**
-
-- Homepage: https://yihua7.github.io/SC-GS-web/ 
-- Paper: https://arxiv.org/abs/2312.14937
-- Code: https://github.com/yihua7/SC-GS
-
-**Spacetime Gaussian Feature Splatting for Real-Time Dynamic View Synthesis**
-
-- Homepage: https://oppo-us-research.github.io/SpacetimeGaussians-website/ 
-- Paper: https://arxiv.org/abs/2312.16812
-- Code: https://github.com/oppo-us-research/SpacetimeGaussians
-
-**DNGaussian: Optimizing Sparse-View 3D Gaussian Radiance Fields with Global-Local Depth Normalization**
-
-- Homepage: https://fictionarry.github.io/DNGaussian/
-- Paper: https://arxiv.org/abs/2403.06912
-- Code: https://github.com/Fictionarry/DNGaussian
-
-**4D Gaussian Splatting for Real-Time Dynamic Scene Rendering**
-
-- Paper: https://arxiv.org/abs/2310.08528
-- Code: https://github.com/hustvl/4DGaussians
-
-**GaussianDreamer: Fast Generation from Text to 3D Gaussians by Bridging 2D and 3D Diffusion Models**
-
-- Paper: https://arxiv.org/abs/2310.08529
-- Code: https://github.com/hustvl/GaussianDreamer
+**《GaussianDreamer：通过桥接2D与3D扩散模型实现文本到3D高斯的快速生成》**
+- 论文链接：https://arxiv.org/abs/2310.08529
+- 代码仓库：https://github.com/hustvl/GaussianDreamer
 
 <a name="Avatars"></a>
 
-# Avatars
+# 数字人化身（Avatars）
 
-**GaussianAvatar: Towards Realistic Human Avatar Modeling from a Single Video via Animatable 3D Gaussians**
+**《GaussianAvatar：基于可驱动3D高斯的单视频真实感人体化身建模》**
+- 论文链接：https://arxiv.org/abs/2312.02134
+- 代码仓库：https://github.com/huliangxiao/GaussianAvatar
 
-- Paper: https://arxiv.org/abs/2312.02134
-- Code: https://github.com/huliangxiao/GaussianAvatar
-
-**Real-Time Simulated Avatar from Head-Mounted Sensors**
-
-- Homepage: https://www.zhengyiluo.com/SimXR/
-- Paper: https://arxiv.org/abs/2403.06862
+**《基于头戴式传感器的实时仿真化身》**
+- 项目主页：https://www.zhengyiluo.com/SimXR/
+- 论文链接：https://arxiv.org/abs/2403.06862
 
 <a name="Backbone"></a>
 
-# Backbone
+# 骨干网络（Backbone）
 
-**RepViT: Revisiting Mobile CNN From ViT Perspective**
+**《RepViT：从Transformer视角重访移动端CNN》**
+- 论文链接：https://arxiv.org/abs/2307.09283
+- 代码仓库：https://github.com/THU-MIG/RepViT
 
-- Paper: https://arxiv.org/abs/2307.09283
-- Code: https://github.com/THU-MIG/RepViT
-
-**TransNeXt: Robust Foveal Visual Perception for Vision Transformers**
-
-- Paper: https://arxiv.org/abs/2311.17132
-- Code: https://github.com/DaiShiResearch/TransNeXt
+**《TransNeXt：面向视觉Transformer的鲁棒中央凹视觉感知》**
+- 论文链接：https://arxiv.org/abs/2311.17132
+- 代码仓库：https://github.com/DaiShiResearch/TransNeXt
 
 <a name="CLIP"></a>
 
-# CLIP
+# CLIP（跨模态匹配模型）
 
-**Alpha-CLIP: A CLIP Model Focusing on Wherever You Want**
+**《Alpha-CLIP：专注于任意目标区域的CLIP模型》**
+- 论文链接：https://arxiv.org/abs/2312.03818
+- 代码仓库：https://github.com/SunzeY/AlphaCLIP
 
-- Paper: https://arxiv.org/abs/2312.03818
-- Code: https://github.com/SunzeY/AlphaCLIP
-
-**FairCLIP: Harnessing Fairness in Vision-Language Learning**
-
-- Paper: https://arxiv.org/abs/2403.19949
-- Code: https://github.com/Harvard-Ophthalmology-AI-Lab/FairCLIP
+**《FairCLIP：面向视觉-语言学习的公平性优化》**
+- 论文链接：https://arxiv.org/abs/2403.19949
+- 代码仓库：https://github.com/Harvard-Ophthalmology-AI-Lab/FairCLIP
 
 <a name="MAE"></a>
 
-# MAE
+# MAE（掩码自编码器）
 
 <a name="Embodied-AI"></a>
 
-# Embodied AI
+# 具身智能（Embodied AI）
 
-**EmbodiedScan: A Holistic Multi-Modal 3D Perception Suite Towards Embodied AI**
+**《EmbodiedScan：面向具身智能的全栈多模态3D感知套件》**
+- 项目主页：https://tai-wang.github.io/embodiedscan/
+- 论文链接：https://arxiv.org/abs/2312.16170
+- 代码仓库：https://github.com/OpenRobotLab/EmbodiedScan
 
-- Homepage: https://tai-wang.github.io/embodiedscan/
-- Paper: https://arxiv.org/abs/2312.16170
-- Code: https://github.com/OpenRobotLab/EmbodiedScan
+**《MP5：基于主动感知的Minecraft多模态开放式具身系统》**
+- 项目主页：https://iranqin.github.io/MP5.github.io/ 
+- 论文链接：https://arxiv.org/abs/2312.07472
+- 代码仓库：https://github.com/IranQin/MP5
 
-**MP5: A Multi-modal Open-ended Embodied System in Minecraft via Active Perception**
-
-- Homepage: https://iranqin.github.io/MP5.github.io/ 
-- Paper: https://arxiv.org/abs/2312.07472
-- Code: https://github.com/IranQin/MP5
-
-**LEMON: Learning 3D Human-Object Interaction Relation from 2D Images**
-
-- Paper: https://arxiv.org/abs/2312.08963
-- Code: https://github.com/yyvhang/lemon_3d 
+**《LEMON：从2D图像中学习3D人机交互关系》**
+- 论文链接：https://arxiv.org/abs/2312.08963
+- 代码仓库：https://github.com/yyvhang/lemon_3d 
 
 <a name="GAN"></a>
 
-# GAN
+# GAN（生成对抗网络）
 
 <a name="OCR"></a>
 
-# OCR
+# OCR（光学字符识别）
 
-**An Empirical Study of Scaling Law for OCR**
+**《OCR缩放定律的实证研究》**
+- 论文链接：https://arxiv.org/abs/2401.00028
+- 代码仓库：https://github.com/large-ocr-model/large-ocr-model.github.io
 
-- Paper: https://arxiv.org/abs/2401.00028
-- Code: https://github.com/large-ocr-model/large-ocr-model.github.io
-
-**ODM: A Text-Image Further Alignment Pre-training Approach for Scene Text Detection and Spotting**
-
-- Paper: https://arxiv.org/abs/2403.00303
-- Code: https://github.com/PriNing/ODM 
+**《ODM：面向场景文本检测与识别的文本-图像深度对齐预训练方法》**
+- 论文链接：https://arxiv.org/abs/2403.00303
+- 代码仓库：https://github.com/PriNing/ODM 
 
 <a name="NeRF"></a>
 
-# NeRF
+# NeRF（神经辐射场）
 
-**PIE-NeRF🍕: Physics-based Interactive Elastodynamics with NeRF**
-
-- Paper: https://arxiv.org/abs/2311.13099
-- Code: https://github.com/FYTalon/pienerf/ 
+**《PIE-NeRF🍕：基于物理的神经辐射场交互式弹性动力学》**
+- 论文链接：https://arxiv.org/abs/2311.13099
+- 代码仓库：https://github.com/FYTalon/pienerf/ 
 
 <a name="DETR"></a>
 
-# DETR
+# DETR（检测Transformer）
 
-**DETRs Beat YOLOs on Real-time Object Detection**
+**《DETR系列在实时目标检测上超越YOLO系列》**
+- 论文链接：https://arxiv.org/abs/2304.08069
+- 代码仓库：https://github.com/lyuwenyu/RT-DETR
 
-- Paper: https://arxiv.org/abs/2304.08069
-- Code: https://github.com/lyuwenyu/RT-DETR
-
-**Salience DETR: Enhancing Detection Transformer with Hierarchical Salience Filtering Refinement**
-
-- Paper: https://arxiv.org/abs/2403.16131
-- Code: https://github.com/xiuqhou/Salience-DETR
+**《Salience DETR：基于层级显著性过滤 refinement 的检测Transformer增强》**
+- 论文链接：https://arxiv.org/abs/2403.16131
+- 代码仓库：https://github.com/xiuqhou/Salience-DETR
 
 <a name="Prompt"></a>
 
-# Prompt
+# 提示学习（Prompt）
 
 <a name="MLLM"></a>
 
-# 多模态大语言模型(MLLM)
+# 多模态大语言模型（MLLM）
 
-**mPLUG-Owl2: Revolutionizing Multi-modal Large Language Model with Modality Collaboration**
+**《mPLUG-Owl2：以模态协作革新多模态大语言模型》**
+- 论文链接：https://arxiv.org/abs/2311.04257
+- 代码仓库：https://github.com/X-PLUG/mPLUG-Owl/tree/main/mPLUG-Owl2
 
-- Paper: https://arxiv.org/abs/2311.04257
-- Code: https://github.com/X-PLUG/mPLUG-Owl/tree/main/mPLUG-Owl2
+**《面向多模态大语言模型的链接上下文学习》**
+- 论文链接：https://arxiv.org/abs/2308.07891
+- 代码仓库：https://github.com/isekai-portal/Link-Context-Learning/tree/main 
 
-**Link-Context Learning for Multimodal LLMs**
+**《OPERA：通过过信任惩罚与反思分配缓解多模态大语言模型的幻觉问题》**
+- 论文链接：https://arxiv.org/abs/2311.17911
+- 代码仓库：https://github.com/shikiw/OPERA
 
-- Paper: https://arxiv.org/abs/2308.07891
-- Code: https://github.com/isekai-portal/Link-Context-Learning/tree/main 
+**《让大型多模态模型理解任意视觉提示》**
+- 项目主页：https://vip-llava.github.io/ 
+- 论文链接：https://arxiv.org/abs/2312.00784
 
-**OPERA: Alleviating Hallucination in Multi-Modal Large Language Models via Over-Trust Penalty and Retrospection-Allocation**
+**《Pink：释放多模态大语言模型的指代理解能力》**
+- 论文链接：https://arxiv.org/abs/2310.00582
+- 代码仓库：https://github.com/SY-Xuan/Pink
 
-- Paper: https://arxiv.org/abs/2311.17911
-- Code: https://github.com/shikiw/OPERA
+**《Chat-UniVi：统一视觉表示赋能大语言模型的图像与视频理解》**
+- 论文链接：https://arxiv.org/abs/2311.08046
+- 代码仓库：https://github.com/PKU-YuanGroup/Chat-UniVi
 
-**Making Large Multimodal Models Understand Arbitrary Visual Prompts**
-
-- Homepage: https://vip-llava.github.io/ 
-- Paper: https://arxiv.org/abs/2312.00784
-
-**Pink: Unveiling the power of referential comprehension for multi-modal llms**
-
-- Paper: https://arxiv.org/abs/2310.00582
-- Code: https://github.com/SY-Xuan/Pink
-
-**Chat-UniVi: Unified Visual Representation Empowers Large Language Models with Image and Video Understanding**
-
-- Paper: https://arxiv.org/abs/2311.08046
-- Code: https://github.com/PKU-YuanGroup/Chat-UniVi
-
-**OneLLM: One Framework to Align All Modalities with Language**
-
-- Paper: https://arxiv.org/abs/2312.03700
-- Code: https://github.com/csuhan/OneLLM
+**《OneLLM：统一所有模态与语言对齐的框架》**
+- 论文链接：https://arxiv.org/abs/2312.03700
+- 代码仓库：https://github.com/csuhan/OneLLM
 
 <a name="LLM"></a>
 
-# 大语言模型(LLM)
+# 大语言模型（LLM）
 
-**VTimeLLM: Empower LLM to Grasp Video Moments**
-
-- Paper: https://arxiv.org/abs/2311.18445
-- Code: https://github.com/huangb23/VTimeLLM 
+**《VTimeLLM：赋能大语言模型掌握视频时刻信息》**
+- 论文链接：https://arxiv.org/abs/2311.18445
+- 代码仓库：https://github.com/huangb23/VTimeLLM 
 
 <a name="NAS"></a>
 
-# NAS
+# NAS（神经架构搜索）
 
 <a name="ReID"></a>
 
-# ReID(重识别)
+# ReID（重识别）
 
-**Magic Tokens: Select Diverse Tokens for Multi-modal Object Re-Identification**
+**《Magic Tokens：为多模态目标重识别选择多样化令牌》**
+- 论文链接：https://arxiv.org/abs/2403.10254
+- 代码仓库：https://github.com/924973292/EDITOR 
 
-- Paper: https://arxiv.org/abs/2403.10254
-- Code: https://github.com/924973292/EDITOR 
-
-**Noisy-Correspondence Learning for Text-to-Image Person Re-identification**
-
-- Paper: https://arxiv.org/abs/2308.09911
-
-- Code : https://github.com/QinYang79/RDE 
+**《面向文本到图像行人重识别的噪声对应学习》**
+- 论文链接：https://arxiv.org/abs/2308.09911
+- 代码仓库：https://github.com/QinYang79/RDE 
 
 <a name="Diffusion"></a>
 
-# 扩散模型(Diffusion Models)
+# 扩散模型（Diffusion Models）
 
-**InstanceDiffusion: Instance-level Control for Image Generation**
+**《InstanceDiffusion：面向图像生成的实例级控制》**
+- 项目主页：https://people.eecs.berkeley.edu/~xdwang/projects/InstDiff/
+- 论文链接：https://arxiv.org/abs/2402.03290
+- 代码仓库：https://github.com/frank-xwang/InstanceDiffusion
 
-- Homepage: https://people.eecs.berkeley.edu/~xdwang/projects/InstDiff/
+**《残差去噪扩散模型》**
+- 论文链接：https://arxiv.org/abs/2308.13712
+- 代码仓库：https://github.com/nachifur/RDDM
 
-- Paper: https://arxiv.org/abs/2402.03290
-- Code: https://github.com/frank-xwang/InstanceDiffusion
+**《DeepCache：免费加速扩散模型》**
+- 论文链接：https://arxiv.org/abs/2312.00858
+- 代码仓库：https://github.com/horseee/DeepCache
 
-**Residual Denoising Diffusion Models**
+**《DEADiff：基于解耦表示的高效风格化扩散模型》**
+- 项目主页：https://tianhao-qi.github.io/DEADiff/ 
+- 论文链接：https://arxiv.org/abs/2403.06951
+- 代码仓库：https://github.com/Tianhao-Qi/DEADiff_code
 
-- Paper: https://arxiv.org/abs/2308.13712
-- Code: https://github.com/nachifur/RDDM
+**《SVGDreamer：基于扩散模型的文本引导SVG生成》**
+- 论文链接：https://arxiv.org/abs/2312.16476
+- 代码仓库：https://ximinng.github.io/SVGDreamer-project/
 
-**DeepCache: Accelerating Diffusion Models for Free**
+**《InteractDiffusion：面向文本到图像扩散模型的交互控制》**
+- 论文链接：https://arxiv.org/abs/2312.05849
+- 代码仓库：https://github.com/jiuntian/interactdiffusion
 
-- Paper: https://arxiv.org/abs/2312.00858
-- Code: https://github.com/horseee/DeepCache
+**《MMA-Diffusion：面向扩散模型的多模态攻击》**
+- 论文链接：https://arxiv.org/abs/2311.17516
+- 代码仓库：https://github.com/yangyijune/MMA-Diffusion
 
-**DEADiff: An Efficient Stylization Diffusion Model with Disentangled Representations**
-
-- Homepage: https://tianhao-qi.github.io/DEADiff/ 
-
-- Paper: https://arxiv.org/abs/2403.06951
-- Code: https://github.com/Tianhao-Qi/DEADiff_code
-
-**SVGDreamer: Text Guided SVG Generation with Diffusion Model**
-
-- Paper: https://arxiv.org/abs/2312.16476
-- Code: https://ximinng.github.io/SVGDreamer-project/
-
-**InteractDiffusion: Interaction-Control for Text-to-Image Diffusion Model**
-
-- Paper: https://arxiv.org/abs/2312.05849
-- Code: https://github.com/jiuntian/interactdiffusion
-
-**MMA-Diffusion: MultiModal Attack on Diffusion Models**
-
-- Paper: https://arxiv.org/abs/2311.17516
-- Code: https://github.com/yangyijune/MMA-Diffusion
-
-**VMC: Video Motion Customization using Temporal Attention Adaption for Text-to-Video Diffusion Models**
-
-- Homeoage: https://video-motion-customization.github.io/ 
-- Paper: https://arxiv.org/abs/2312.00845
-- Code: https://github.com/HyeonHo99/Video-Motion-Customization
+**《VMC：基于时序注意力自适应的文本到视频扩散模型视频运动定制》**
+- 项目主页：https://video-motion-customization.github.io/ 
+- 论文链接：https://arxiv.org/abs/2312.00845
+- 代码仓库：https://github.com/HyeonHo99/Video-Motion-Customization
 
 <a name="Vision-Transformer"></a>
 
-# Vision Transformer
+# 视觉Transformer（Vision Transformer）
 
-**TransNeXt: Robust Foveal Visual Perception for Vision Transformers**
+**《TransNeXt：面向视觉Transformer的鲁棒中央凹视觉感知》**
+- 论文链接：https://arxiv.org/abs/2311.17132
+- 代码仓库：https://github.com/DaiShiResearch/TransNeXt
 
-- Paper: https://arxiv.org/abs/2311.17132
-- Code: https://github.com/DaiShiResearch/TransNeXt
+**《RepViT：从Transformer视角重访移动端CNN》**
+- 论文链接：https://arxiv.org/abs/2307.09283
+- 代码仓库：https://github.com/THU-MIG/RepViT
 
-**RepViT: Revisiting Mobile CNN From ViT Perspective**
-
-- Paper: https://arxiv.org/abs/2307.09283
-- Code: https://github.com/THU-MIG/RepViT
-
-**A General and Efficient Training for Transformer via Token Expansion**
-
-- Paper: https://arxiv.org/abs/2404.00672
-- Code: https://github.com/Osilly/TokenExpansion 
+**《基于令牌扩展的Transformer通用高效训练》**
+- 论文链接：https://arxiv.org/abs/2404.00672
+- 代码仓库：https://github.com/Osilly/TokenExpansion 
 
 <a name="VL"></a>
 
-# 视觉和语言(Vision-Language)
+# 视觉与语言（Vision-Language）
 
-**PromptKD: Unsupervised Prompt Distillation for Vision-Language Models**
+**《PromptKD：面向视觉-语言模型的无监督提示蒸馏》**
+- 论文链接：https://arxiv.org/abs/2403.02781
+- 代码仓库：https://github.com/zhengli97/PromptKD
 
-- Paper: https://arxiv.org/abs/2403.02781
-- Code: https://github.com/zhengli97/PromptKD
-
-**FairCLIP: Harnessing Fairness in Vision-Language Learning**
-
-- Paper: https://arxiv.org/abs/2403.19949
-- Code: https://github.com/Harvard-Ophthalmology-AI-Lab/FairCLIP
+**《FairCLIP：面向视觉-语言学习的公平性优化》**
+- 论文链接：https://arxiv.org/abs/2403.19949
+- 代码仓库：https://github.com/Harvard-Ophthalmology-AI-Lab/FairCLIP
 
 <a name="Object-Detection"></a>
 
-# 目标检测(Object Detection)
+# 目标检测（Object Detection）
 
-**DETRs Beat YOLOs on Real-time Object Detection**
+**《DETR系列在实时目标检测上超越YOLO系列》**
+- 论文链接：https://arxiv.org/abs/2304.08069
+- 代码仓库：https://github.com/lyuwenyu/RT-DETR
 
-- Paper: https://arxiv.org/abs/2304.08069
-- Code: https://github.com/lyuwenyu/RT-DETR
+**《基于零样本昼夜域自适应的目标检测性能提升》**
+- 论文链接：https://arxiv.org/abs/2312.01220
+- 代码仓库：https://github.com/ZPDu/Boosting-Object-Detection-with-Zero-Shot-Day-Night-Domain-Adaptation 
 
-**Boosting Object Detection with Zero-Shot Day-Night Domain Adaptation**
+**《YOLO-World：实时开放词汇目标检测》**
+- 论文链接：https://arxiv.org/abs/2401.17270
+- 代码仓库：https://github.com/AILab-CVC/YOLO-World
 
-- Paper: https://arxiv.org/abs/2312.01220
-- Code: https://github.com/ZPDu/Boosting-Object-Detection-with-Zero-Shot-Day-Night-Domain-Adaptation 
-
-**YOLO-World: Real-Time Open-Vocabulary Object Detection**
-
-- Paper: https://arxiv.org/abs/2401.17270
-- Code: https://github.com/AILab-CVC/YOLO-World
-
-**Salience DETR: Enhancing Detection Transformer with Hierarchical Salience Filtering Refinement**
-
-- Paper: https://arxiv.org/abs/2403.16131
-- Code: https://github.com/xiuqhou/Salience-DETR
+**《Salience DETR：基于层级显著性过滤 refinement 的检测Transformer增强》**
+- 论文链接：https://arxiv.org/abs/2403.16131
+- 代码仓库：https://github.com/xiuqhou/Salience-DETR
 
 <a name="Anomaly-Detection"></a>
 
-# 异常检测(Anomaly Detection)
+# 异常检测（Anomaly Detection）
 
-**Anomaly Heterogeneity Learning for Open-set Supervised Anomaly Detection**
-
-- Paper: https://arxiv.org/abs/2310.12790
-- Code: https://github.com/mala-lab/AHL
+**《面向开集有监督异常检测的异常异质性学习》**
+- 论文链接：https://arxiv.org/abs/2310.12790
+- 代码仓库：https://github.com/mala-lab/AHL
 
 <a name="VT"></a>
 
-# 目标跟踪(Object Tracking)
+# 目标跟踪（Object Tracking）
 
-**Delving into the Trajectory Long-tail Distribution for Muti-object Tracking**
-
-- Paper: https://arxiv.org/abs/2403.04700
-- Code: https://github.com/chen-si-jia/Trajectory-Long-tail-Distribution-for-MOT 
+**《深入探索多目标跟踪中的轨迹长尾分布》**
+- 论文链接：https://arxiv.org/abs/2403.04700
+- 代码仓库：https://github.com/chen-si-jia/Trajectory-Long-tail-Distribution-for-MOT 
 
 <a name="Semantic-Segmentation"></a>
 
-# 语义分割(Semantic Segmentation)
+# 语义分割（Semantic Segmentation）
 
-**Stronger, Fewer, & Superior: Harnessing Vision Foundation Models for Domain Generalized Semantic Segmentation**
+**《更强、更少、更优：利用视觉基础模型实现域泛化语义分割》**
+- 论文链接：https://arxiv.org/abs/2312.04265
+- 代码仓库：https://github.com/w1oves/Rein
 
-- Paper: https://arxiv.org/abs/2312.04265
-- Code: https://github.com/w1oves/Rein
-
-**SED: A Simple Encoder-Decoder for Open-Vocabulary Semantic Segmentation**
-
-- Paper: https://arxiv.org/abs/2311.15537
-- Code: https://github.com/xb534/SED 
+**《SED：面向开放词汇语义分割的简单编解码器》**
+- 论文链接：https://arxiv.org/abs/2311.15537
+- 代码仓库：https://github.com/xb534/SED 
 
 <a name="MI"></a>
 
-# 医学图像(Medical Image)
+# 医学图像（Medical Image）
 
-**Feature Re-Embedding: Towards Foundation Model-Level Performance in Computational Pathology**
+**《特征重嵌入：在计算病理学中实现基础模型级性能》**
+- 论文链接：https://arxiv.org/abs/2402.17228
+- 代码仓库：https://github.com/DearCaat/RRT-MIL
 
-- Paper: https://arxiv.org/abs/2402.17228
-- Code: https://github.com/DearCaat/RRT-MIL
+**《VoCo：面向3D医学图像分析的简单高效体积对比学习框架》**
+- 论文链接：https://arxiv.org/abs/2402.17300
+- 代码仓库：https://github.com/Luffy03/VoCo
 
-**VoCo: A Simple-yet-Effective Volume Contrastive Learning Framework for 3D Medical Image Analysis**
-
-- Paper: https://arxiv.org/abs/2402.17300
-- Code: https://github.com/Luffy03/VoCo
-
-**ChAda-ViT : Channel Adaptive Attention for Joint Representation Learning of Heterogeneous Microscopy Images**
-
-- Paper: https://arxiv.org/abs/2311.15264
-- Code: https://github.com/nicoboou/chada_vit 
+**《ChAda-ViT：面向异质显微图像联合表示学习的通道自适应注意力》**
+- 论文链接：https://arxiv.org/abs/2311.15264
+- 代码仓库：https://github.com/nicoboou/chada_vit 
 
 <a name="MIS"></a>
 
-# 医学图像分割(Medical Image Segmentation)
-
-
+# 医学图像分割（Medical Image Segmentation）
 
 <a name="Autonomous-Driving"></a>
 
-# 自动驾驶(Autonomous Driving)
+# 自动驾驶（Autonomous Driving）
 
-**UniPAD: A Universal Pre-training Paradigm for Autonomous Driving**
+**《UniPAD：面向自动驾驶的通用预训练范式》**
+- 论文链接：https://arxiv.org/abs/2310.08370
+- 代码仓库：https://github.com/Nightmare-n/UniPAD
 
-- Paper: https://arxiv.org/abs/2310.08370
-- Code: https://github.com/Nightmare-n/UniPAD
+**《Cam4DOcc：面向自动驾驶应用的纯相机4D占据预测基准》**
+- 论文链接：https://arxiv.org/abs/2311.17663
+- 代码仓库：https://github.com/haomo-ai/Cam4DOcc
 
-**Cam4DOcc: Benchmark for Camera-Only 4D Occupancy Forecasting in Autonomous Driving Applications**
+**《面向在线3D场景感知的基于记忆的适配器》**
+- 论文链接：https://arxiv.org/abs/2403.06974
+- 代码仓库：https://github.com/xuxw98/Online3D
 
-- Paper: https://arxiv.org/abs/2311.17663
-- Code: https://github.com/haomo-ai/Cam4DOcc
+**《基于上下文实例查询的3D语义场景补全协同优化》**
+- 论文链接：https://arxiv.org/abs/2306.15670
+- 代码仓库：https://github.com/hustvl/Symphonies
 
-**Memory-based Adapters for Online 3D Scene Perception**
+**《面向路侧协同感知的真实世界大规模数据集》**
+- 论文链接：https://arxiv.org/abs/2403.10145
+- 代码仓库：https://github.com/AIR-THU/DAIR-RCooper
 
-- Paper: https://arxiv.org/abs/2403.06974
-- Code: https://github.com/xuxw98/Online3D
+**《面向自动驾驶的单视图与多视图深度自适应融合》**
+- 论文链接：https://arxiv.org/abs/2403.07535
+- 代码仓库：https://github.com/Junda24/AFNet
 
-**Symphonize 3D Semantic Scene Completion with Contextual Instance Queries**
-
-- Paper: https://arxiv.org/abs/2306.15670
-- Code: https://github.com/hustvl/Symphonies
-
-**A Real-world Large-scale Dataset for Roadside Cooperative Perception**
-
-- Paper: https://arxiv.org/abs/2403.10145
-- Code: https://github.com/AIR-THU/DAIR-RCooper
-
-**Adaptive Fusion of Single-View and Multi-View Depth for Autonomous Driving**
-
-- Paper: https://arxiv.org/abs/2403.07535
-- Code: https://github.com/Junda24/AFNet
-
-**Traffic Scene Parsing through the TSP6K Dataset**
-
-- Paper: https://arxiv.org/pdf/2303.02835.pdf
-- Code: https://github.com/PengtaoJiang/TSP6K 
+**《基于TSP6K数据集的交通场景解析》**
+- 论文链接：https://arxiv.org/pdf/2303.02835.pdf
+- 代码仓库：https://github.com/PengtaoJiang/TSP6K 
 
 <a name="3D-Point-Cloud"></a>
 
-# 3D点云(3D-Point-Cloud)
-
-
+# 3D点云（3D-Point-Cloud）
 
 <a name="3DOD"></a>
 
-# 3D目标检测(3D Object Detection)
+# 3D目标检测（3D Object Detection）
 
-**PTT: Point-Trajectory Transformer for Efficient Temporal 3D Object Detection**
+**《PTT：面向高效时序3D目标检测的点-轨迹Transformer》**
+- 论文链接：https://arxiv.org/abs/2312.08371
+- 代码仓库：https://github.com/kuanchihhuang/PTT
 
-- Paper: https://arxiv.org/abs/2312.08371
-- Code: https://github.com/kuanchihhuang/PTT
-
-**UniMODE: Unified Monocular 3D Object Detection**
-
-- Paper: https://arxiv.org/abs/2402.18573
+**《UniMODE：统一单目3D目标检测》**
+- 论文链接：https://arxiv.org/abs/2402.18573
 
 <a name="3DOD"></a>
 
-# 3D语义分割(3D Semantic Segmentation)
+# 3D语义分割（3D Semantic Segmentation）
 
 <a name="Image-Editing"></a>
 
-# 图像编辑(Image Editing)
+# 图像编辑（Image Editing）
 
-**Edit One for All: Interactive Batch Image Editing**
-
-- Homepage: https://thaoshibe.github.io/edit-one-for-all 
-- Paper: https://arxiv.org/abs/2401.10219
-- Code: https://github.com/thaoshibe/edit-one-for-all
+**《一编即全：交互式批量图像编辑》**
+- 项目主页：https://thaoshibe.github.io/edit-one-for-all 
+- 论文链接：https://arxiv.org/abs/2401.10219
+- 代码仓库：https://github.com/thaoshibe/edit-one-for-all
 
 <a name="Video-Editing"></a>
 
-# 视频编辑(Video Editing)
+# 视频编辑（Video Editing）
 
-**MaskINT: Video Editing via Interpolative Non-autoregressive Masked Transformers**
-
-- Homepage:  [https://maskint.github.io](https://maskint.github.io/) 
-
-- Paper: https://arxiv.org/abs/2312.12468
+**《MaskINT：基于插值非自回归掩码Transformer的视频编辑》**
+- 项目主页：https://maskint.github.io
+- 论文链接：https://arxiv.org/abs/2312.12468
 
 <a name="LLV"></a>
 
-# Low-level Vision
+# 低级视觉（Low-level Vision）
 
-**Residual Denoising Diffusion Models**
+**《残差去噪扩散模型》**
+- 论文链接：https://arxiv.org/abs/2308.13712
+- 代码仓库：https://github.com/nachifur/RDDM
 
-- Paper: https://arxiv.org/abs/2308.13712
-- Code: https://github.com/nachifur/RDDM
-
-**Boosting Image Restoration via Priors from Pre-trained Models**
-
-- Paper: https://arxiv.org/abs/2403.06793
+**《基于预训练模型先验的图像恢复性能提升》**
+- 论文链接：https://arxiv.org/abs/2403.06793
 
 <a name="SR"></a>
 
-# 超分辨率(Super-Resolution)
+# 超分辨率（Super-Resolution）
 
-**SeD: Semantic-Aware Discriminator for Image Super-Resolution**
+**《SeD：面向图像超分辨率的语义感知判别器》**
+- 论文链接：https://arxiv.org/abs/2402.19387
+- 代码仓库：https://github.com/lbc12345/SeD
 
-- Paper: https://arxiv.org/abs/2402.19387
-- Code: https://github.com/lbc12345/SeD
-
-**APISR: Anime Production Inspired Real-World Anime Super-Resolution**
-
-- Paper: https://arxiv.org/abs/2403.01598
-- Code: https://github.com/Kiteretsu77/APISR 
+**《APISR：受动画制作启发的真实世界动画超分辨率》**
+- 论文链接：https://arxiv.org/abs/2403.01598
+- 代码仓库：https://github.com/Kiteretsu77/APISR 
 
 <a name="Denoising"></a>
 
-# 去噪(Denoising)
+# 去噪（Denoising）
 
-## 图像去噪(Image Denoising)
+## 图像去噪（Image Denoising）
 
 <a name="3D-Human-Pose-Estimation"></a>
 
-# 3D人体姿态估计(3D Human Pose Estimation)
+# 3D人体姿态估计（3D Human Pose Estimation）
 
-**Hourglass Tokenizer for Efficient Transformer-Based 3D Human Pose Estimation**
-
-- Paper: https://arxiv.org/abs/2311.12028
-- Code: https://github.com/NationalGAILab/HoT 
+**《Hourglass Tokenizer：面向高效Transformer-based 3D人体姿态估计》**
+- 论文链接：https://arxiv.org/abs/2311.12028
+- 代码仓库：https://github.com/NationalGAILab/HoT 
 
 <a name="Image-Generation"></a>
 
-# 图像生成(Image Generation)
+# 图像生成（Image Generation）
 
-**InstanceDiffusion: Instance-level Control for Image Generation**
+**《InstanceDiffusion：面向图像生成的实例级控制》**
+- 项目主页：https://people.eecs.berkeley.edu/~xdwang/projects/InstDiff/
+- 论文链接：https://arxiv.org/abs/2402.03290
+- 代码仓库：https://github.com/frank-xwang/InstanceDiffusion
 
-- Homepage: https://people.eecs.berkeley.edu/~xdwang/projects/InstDiff/
+**《ECLIPSE：面向图像生成的资源高效文本到图像先验》**
+- 项目主页：https://eclipse-t2i.vercel.app/
+- 论文链接：https://arxiv.org/abs/2312.04655
+- 代码仓库：https://github.com/eclipse-t2i/eclipse-inference
 
-- Paper: https://arxiv.org/abs/2402.03290
-- Code: https://github.com/frank-xwang/InstanceDiffusion
+**《Instruct-Imagen：基于多模态指令的图像生成》**
+- 论文链接：https://arxiv.org/abs/2401.01952
 
-**ECLIPSE: A Resource-Efficient Text-to-Image Prior for Image Generations**
+**《残差去噪扩散模型》**
+- 论文链接：https://arxiv.org/abs/2308.13712
+- 代码仓库：https://github.com/nachifur/RDDM
 
-- Homepage: https://eclipse-t2i.vercel.app/
-- Paper: https://arxiv.org/abs/2312.04655
+**《UniGS：面向图像生成与分割的统一表示》**
+- 论文链接：https://arxiv.org/abs/2312.01985
 
-- Code: https://github.com/eclipse-t2i/eclipse-inference
+**《面向文本到图像合成的多实例生成控制器》**
+- 论文链接：https://arxiv.org/abs/2402.05408
+- 代码仓库：https://github.com/limuloo/migc
 
-**Instruct-Imagen: Image Generation with Multi-modal Instruction**
+**《SVGDreamer：基于扩散模型的文本引导SVG生成》**
+- 论文链接：https://arxiv.org/abs/2312.16476
+- 代码仓库：https://ximinng.github.io/SVGDreamer-project/
 
-- Paper: https://arxiv.org/abs/2401.01952
+**《InteractDiffusion：面向文本到图像扩散模型的交互控制》**
+- 论文链接：https://arxiv.org/abs/2312.05849
+- 代码仓库：https://github.com/jiuntian/interactdiffusion
 
-**Residual Denoising Diffusion Models**
-
-- Paper: https://arxiv.org/abs/2308.13712
-- Code: https://github.com/nachifur/RDDM
-
-**UniGS: Unified Representation for Image Generation and Segmentation**
-
-- Paper: https://arxiv.org/abs/2312.01985
-
-**Multi-Instance Generation Controller for Text-to-Image Synthesis**
-
-- Paper: https://arxiv.org/abs/2402.05408
-- Code: https://github.com/limuloo/migc
-
-**SVGDreamer: Text Guided SVG Generation with Diffusion Model**
-
-- Paper: https://arxiv.org/abs/2312.16476
-- Code: https://ximinng.github.io/SVGDreamer-project/
-
-**InteractDiffusion: Interaction-Control for Text-to-Image Diffusion Model**
-
-- Paper: https://arxiv.org/abs/2312.05849
-- Code: https://github.com/jiuntian/interactdiffusion
-
-**Ranni: Taming Text-to-Image Diffusion for Accurate Prompt Following**
-
-- Paper: https://arxiv.org/abs/2311.17002
-- Code: https://github.com/ali-vilab/Ranni
+**《Ranni：驯服文本到图像扩散模型以实现精准提示跟随》**
+- 论文链接：https://arxiv.org/abs/2311.17002
+- 代码仓库：https://github.com/ali-vilab/Ranni
 
 <a name="Video-Generation"></a>
 
-# 视频生成(Video Generation)
+# 视频生成（Video Generation）
 
-**Vlogger: Make Your Dream A Vlog**
+**《Vlogger：让你的梦想成为Vlog》**
+- 论文链接：https://arxiv.org/abs/2401.09414
+- 代码仓库：https://github.com/Vchitect/Vlogger
 
-- Paper: https://arxiv.org/abs/2401.09414
-- Code: https://github.com/Vchitect/Vlogger
+**《VBench：面向视频生成模型的综合基准套件》**
+- 项目主页：https://vchitect.github.io/VBench-project/ 
+- 论文链接：https://arxiv.org/abs/2311.17982
+- 代码仓库：https://github.com/Vchitect/VBench
 
-**VBench: Comprehensive Benchmark Suite for Video Generative Models**
-
-- Homepage: https://vchitect.github.io/VBench-project/ 
-- Paper: https://arxiv.org/abs/2311.17982
-- Code: https://github.com/Vchitect/VBench
-
-**VMC: Video Motion Customization using Temporal Attention Adaption for Text-to-Video Diffusion Models**
-
-- Homeoage: https://video-motion-customization.github.io/ 
-- Paper: https://arxiv.org/abs/2312.00845
-- Code: https://github.com/HyeonHo99/Video-Motion-Customization
+**《VMC：基于时序注意力自适应的文本到视频扩散模型视频运动定制》**
+- 项目主页：https://video-motion-customization.github.io/ 
+- 论文链接：https://arxiv.org/abs/2312.00845
+- 代码仓库：https://github.com/HyeonHo99/Video-Motion-Customization
 
 <a name="3D-Generation"></a>
 
 # 3D生成
 
-**CityDreamer: Compositional Generative Model of Unbounded 3D Cities**
+**《CityDreamer：无界3D城市的组合生成模型》**
+- 项目主页：https://haozhexie.com/project/city-dreamer/ 
+- 论文链接：https://arxiv.org/abs/2309.00610
+- 代码仓库：https://github.com/hzxie/city-dreamer
 
-- Homepage: https://haozhexie.com/project/city-dreamer/ 
-- Paper: https://arxiv.org/abs/2309.00610
-- Code: https://github.com/hzxie/city-dreamer
-
-**LucidDreamer: Towards High-Fidelity Text-to-3D Generation via Interval Score Matching**
-
-- Paper: https://arxiv.org/abs/2311.11284
-- Code: https://github.com/EnVision-Research/LucidDreamer 
+**《LucidDreamer：通过区间得分匹配实现高保真文本到3D生成》**
+- 论文链接：https://arxiv.org/abs/2311.11284
+- 代码仓库：https://github.com/EnVision-Research/LucidDreamer 
 
 <a name="Video-Understanding"></a>
 
-# 视频理解(Video Understanding)
+# 视频理解（Video Understanding）
 
-**MVBench: A Comprehensive Multi-modal Video Understanding Benchmark**
-
-- Paper: https://arxiv.org/abs/2311.17005
-- Code: https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat2 
+**《MVBench：面向多模态视频理解的综合基准》**
+- 论文链接：https://arxiv.org/abs/2311.17005
+- 代码仓库：https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat2 
 
 <a name="KD"></a>
 
-# 知识蒸馏(Knowledge Distillation)
+# 知识蒸馏（Knowledge Distillation）
 
-**Logit Standardization in Knowledge Distillation**
+**《知识蒸馏中的对数标准化》**
+- 论文链接：https://arxiv.org/abs/2403.01427
+- 代码仓库：https://github.com/sunshangquan/logit-standardization-KD
 
-- Paper: https://arxiv.org/abs/2403.01427
-- Code: https://github.com/sunshangquan/logit-standardization-KD
-
-**Efficient Dataset Distillation via Minimax Diffusion**
-
-- Paper: https://arxiv.org/abs/2311.15529
-- Code: https://github.com/vimar-gu/MinimaxDiffusion
+**《基于极大极小扩散的高效数据集蒸馏》**
+- 论文链接：https://arxiv.org/abs/2311.15529
+- 代码仓库：https://github.com/vimar-gu/MinimaxDiffusion
 
 <a name="Stereo-Matching"></a>
 
-# 立体匹配(Stereo Matching)
+# 立体匹配（Stereo Matching）
 
-**Neural Markov Random Field for Stereo Matching**
-
-- Paper: https://arxiv.org/abs/2403.11193
-- Code: https://github.com/aeolusguan/NMRF 
+**《面向立体匹配的神经马尔可夫随机场》**
+- 论文链接：https://arxiv.org/abs/2403.11193
+- 代码仓库：https://github.com/aeolusguan/NMRF 
 
 <a name="SGG"></a>
 
-# 场景图生成(Scene Graph Generation)
+# 场景图生成（Scene Graph Generation）
 
-**HiKER-SGG: Hierarchical Knowledge Enhanced Robust Scene Graph Generation**
-
-- Homepage: https://zhangce01.github.io/HiKER-SGG/ 
-- Paper : https://arxiv.org/abs/2403.12033
-- Code: https://github.com/zhangce01/HiKER-SGG
+**《HiKER-SGG：层级知识增强的鲁棒场景图生成》**
+- 项目主页：https://zhangce01.github.io/HiKER-SGG/ 
+- 论文链接：https://arxiv.org/abs/2403.12033
+- 代码仓库：https://github.com/zhangce01/HiKER-SGG
 
 <a name="Video-Quality-Assessment"></a>
 
-# 视频质量评价(Video Quality Assessment)
+# 视频质量评价（Video Quality Assessment）
 
-**KVQ: Kaleidoscope Video Quality Assessment for Short-form Videos**
-
-- Homepage: https://lixinustc.github.io/projects/KVQ/ 
-
-- Paper: https://arxiv.org/abs/2402.07220
-- Code: https://github.com/lixinustc/KVQ-Challenge-CVPR-NTIRE2024
+**《KVQ：面向短视频的万花筒视频质量评价》**
+- 项目主页：https://lixinustc.github.io/projects/KVQ/ 
+- 论文链接：https://arxiv.org/abs/2402.07220
+- 代码仓库：https://github.com/lixinustc/KVQ-Challenge-CVPR-NTIRE2024
 
 <a name="Datasets"></a>
 
-# 数据集(Datasets)
+# 数据集（Datasets）
 
-**A Real-world Large-scale Dataset for Roadside Cooperative Perception**
+**《面向路侧协同感知的真实世界大规模数据集》**
+- 论文链接：https://arxiv.org/abs/2403.10145
+- 代码仓库：https://github.com/AIR-THU/DAIR-RCooper
 
-- Paper: https://arxiv.org/abs/2403.10145
-- Code: https://github.com/AIR-THU/DAIR-RCooper
-
-**Traffic Scene Parsing through the TSP6K Dataset**
-
-- Paper: https://arxiv.org/pdf/2303.02835.pdf
-- Code: https://github.com/PengtaoJiang/TSP6K 
+**《基于TSP6K数据集的交通场景解析》**
+- 论文链接：https://arxiv.org/pdf/2303.02835.pdf
+- 代码仓库：https://github.com/PengtaoJiang/TSP6K 
 
 <a name="Others"></a>
 
-# 其他(Others)
+# 其他（Others）
 
-**Object Recognition as Next Token Prediction**
+**《目标识别作为下一个令牌预测》**
+- 论文链接：https://arxiv.org/abs/2312.02142
+- 代码仓库：https://github.com/kaiyuyue/nxtp
 
-- Paper: https://arxiv.org/abs/2312.02142
-- Code: https://github.com/kaiyuyue/nxtp
+**《ParameterNet：参数即全部——面向移动网络大规模视觉预训练》**
+- 论文链接：https://arxiv.org/abs/2306.14525
+- 代码仓库：https://parameternet.github.io/ 
 
-**ParameterNet: Parameters Are All You Need for Large-scale Visual Pretraining of Mobile Networks**
+**《基于混合位置编码的无缝人体运动合成》**
+- 论文链接：https://arxiv.org/abs/2402.15509
+- 代码仓库：https://github.com/BarqueroGerman/FlowMDM 
 
-- Paper: https://arxiv.org/abs/2306.14525
-- Code: https://parameternet.github.io/ 
+**《LL3DA：面向全3D理解、推理与规划的视觉交互式指令微调》**
+- 项目主页：https://ll3da.github.io/ 
+- 论文链接：https://arxiv.org/abs/2311.18651
+- 代码仓库：https://github.com/Open3DA/LL3DA
 
-**Seamless Human Motion Composition with Blended Positional Encodings**
+**《CLOVA：具备工具使用与更新能力的闭环视觉助手》**
+- 项目主页：https://clova-tool.github.io/ 
+- 论文链接：https://arxiv.org/abs/2312.10908
 
-- Paper: https://arxiv.org/abs/2402.15509
-- Code: https://github.com/BarqueroGerman/FlowMDM 
+**《MoMask：3D人体运动的生成式掩码建模》**
+- 论文链接：https://arxiv.org/abs/2312.00063
+- 代码仓库：https://github.com/EricGuo5513/momask-codes
 
-**LL3DA: Visual Interactive Instruction Tuning for Omni-3D Understanding, Reasoning, and Planning**
+**《真实场景中的隐式真值与补全》**
+- 项目主页：https://www.robots.ox.ac.uk/~vgg/research/amodal/ 
+- 论文链接：https://arxiv.org/abs/2312.17247
+- 代码仓库：https://github.com/Championchess/Amodal-Completion-in-the-Wild
 
-- Homepage:  https://ll3da.github.io/ 
+**《通过自洽解释改进视觉接地》**
+- 论文链接：https://arxiv.org/abs/2312.04554
+- 代码仓库：https://github.com/uvavision/SelfEQ
 
-- Paper: https://arxiv.org/abs/2311.18651
-- Code: https://github.com/Open3DA/LL3DA
+**《ImageNet-D：面向扩散合成目标的神经网络鲁棒性基准》**
+- 项目主页：https://chenshuang-zhang.github.io/imagenet_d/
+- 论文链接：https://arxiv.org/abs/2403.18775
+- 代码仓库：https://github.com/chenshuang-zhang/imagenet_d
 
- **CLOVA: A Closed-LOop Visual Assistant with Tool Usage and Update**
+**《从合成人体群体活动中学习》**
+- 项目主页：https://cjerry1243.github.io/M3Act/ 
+- 论文链接：https://arxiv.org/abs/2306.16772
+- 代码仓库：https://github.com/cjerry1243/M3Act
 
-- Homepage: https://clova-tool.github.io/ 
-- Paper: https://arxiv.org/abs/2312.10908
+**《一种跨被试脑解码框架》**
+- 项目主页：https://littlepure2333.github.io/MindBridge/
+- 论文链接：https://arxiv.org/abs/2404.07850
+- 代码仓库：https://github.com/littlepure2333/MindBridge
 
-**MoMask: Generative Masked Modeling of 3D Human Motions**
+**《基于低秩专家混合的多任务密集预测》**
+- 论文链接：https://arxiv.org/abs/2403.17749
+- 代码仓库：https://github.com/YuqiYang213/MLoRE
 
-- Paper: https://arxiv.org/abs/2312.00063
-- Code: https://github.com/EricGuo5513/momask-codes
-
- **Amodal Ground Truth and Completion in the Wild**
-
-- Homepage: https://www.robots.ox.ac.uk/~vgg/research/amodal/ 
-- Paper: https://arxiv.org/abs/2312.17247
-- Code: https://github.com/Championchess/Amodal-Completion-in-the-Wild
-
-**Improved Visual Grounding through Self-Consistent Explanations**
-
-- Paper: https://arxiv.org/abs/2312.04554
-- Code: https://github.com/uvavision/SelfEQ
-
-**ImageNet-D: Benchmarking Neural Network Robustness on Diffusion Synthetic Object**
-
-- Homepage: https://chenshuang-zhang.github.io/imagenet_d/
-- Paper: https://arxiv.org/abs/2403.18775
-- Code: https://github.com/chenshuang-zhang/imagenet_d
-
-**Learning from Synthetic Human Group Activities**
-
-- Homepage: https://cjerry1243.github.io/M3Act/ 
-- Paper  https://arxiv.org/abs/2306.16772
-- Code: https://github.com/cjerry1243/M3Act
-
-**A Cross-Subject Brain Decoding Framework**
-
-- Homepage: https://littlepure2333.github.io/MindBridge/
-- Paper: https://arxiv.org/abs/2404.07850
-- Code: https://github.com/littlepure2333/MindBridge
-
-**Multi-Task Dense Prediction via Mixture of Low-Rank Experts**
-
-- Paper : https://arxiv.org/abs/2403.17749
-- Code: https://github.com/YuqiYang213/MLoRE
-
-**Contrastive Mean-Shift Learning for Generalized Category Discovery**
-
-- Homepage: https://postech-cvlab.github.io/cms/ 
-- Paper: https://arxiv.org/abs/2404.09451
-- Code: https://github.com/sua-choi/CMS
-  
+**《面向广义类别发现的对比均值漂移学习》**
+- 项目主页：https://postech-cvlab.github.io/cms/ 
+- 论文链接：https://arxiv.org/abs/2404.09451
+- 代码仓库：https://github.com/sua-choi/CMS
